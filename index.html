@@ -1,159 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liam P. Smith</title>
-  <meta name="description" content="Liam P. Smith, finance student at Fairfield University.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liam P. Smith · Finance Student</title>
+  <meta name="description" content="Liam P. Smith is a finance student at Fairfield University, expected to graduate in May 2029.">
+  <meta name="color-scheme" content="dark light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply the saved theme before the page paints, to avoid a flash
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <main id="main" class="page">
-
-    <!-- Profile header -->
-    <header class="profile">
-      <img class="profile-photo" src="profile.jpg" alt="Portrait of Liam P. Smith" width="180" height="180">
-      <h1 class="profile-name">Liam P. Smith</h1>
-      <p class="profile-title">Finance Student</p>
-      <p class="profile-affiliation">Fairfield University</p>
-
-      <nav class="profile-links" aria-label="Contact links">
-        <a class="button" href="mailto:liam.smith@student.fairfield.edu">Email</a>
-        <!-- To add LinkedIn later, copy this line and paste your real profile URL:
-        <a class="button" href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        -->
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Back to top">LS</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">about</a>
+        <a href="#leadership">leadership</a>
+        <a href="#education">education</a>
+        <a href="#awards">awards</a>
+        <a href="#contact">contact</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
 
-      <p class="profile-bio">
-        I am a finance student at Fairfield University, expected to graduate in May 2029.
-        Outside the classroom I am a member of the investment club and follow market trends closely.
-        In high school I captained the varsity lacrosse and soccer teams, earned the rank of Eagle Scout,
-        and took part in leadership programs in the United States and Ireland.
+  <main id="main-content" class="page">
+
+    <!-- Hero -->
+    <section id="top" class="hero" aria-labelledby="hero-name">
+
+      <!-- ID card -->
+      <div class="id-card" aria-label="Profile card">
+        <div class="id-card-head">
+          <span>Student ID</span>
+          <span>Class of 2029</span>
+        </div>
+        <div class="id-card-body">
+          <img class="id-photo" src="Screenshot%202026-09-29%20145511.png" alt="Portrait of Liam P. Smith" width="120" height="150">
+          <dl class="id-fields">
+            <div>
+              <dt>Now</dt>
+              <dd>Fairfield University</dd>
+            </div>
+            <div>
+              <dt>Based</dt>
+              <dd>Fairfield, CT</dd>
+            </div>
+            <div>
+              <dt>Major</dt>
+              <dd>Finance, B.S.</dd>
+            </div>
+            <div>
+              <dt>Tools 03</dt>
+              <dd>Excel · Microsoft Office · Google Workspace</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="id-card-foot">
+          <span>If found, return to</span>
+          <a href="mailto:liam.smith@student.fairfield.edu">liam.smith@student.fairfield.edu</a>
+        </div>
+      </div>
+
+      <h1 id="hero-name" class="hero-name">Liam P. Smith</h1>
+      <p class="hero-title">Finance Student</p>
+
+      <p class="hero-now">
+        <span class="label">Now</span>
+        B.S. in Finance at Fairfield University, expected May 2029
       </p>
-    </header>
 
-    <!-- Education -->
-    <section class="section" aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
-      <ul class="plain-list">
-        <li>
-          <strong>Fairfield University</strong> — B.S., Finance (expected May 2029)
-          <span class="meta">Fairfield, CT · GPA 3.4</span>
-        </li>
-        <li>
-          <strong>Archbishop Stepinac High School</strong> — Graduated Summa Cum Laude, June 2025
-          <span class="meta">White Plains, NY · GPA 3.7</span>
-        </li>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="mailto:liam.smith@student.fairfield.edu">Email me</a>
+        <a class="btn" href="#leadership">See leadership</a>
+        <!-- To add LinkedIn later, copy this line and paste the real profile URL:
+        <a class="btn" href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        -->
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p class="lead">
+        I'm a finance student at Fairfield University, expected to graduate in May 2029.
+        Outside the classroom I'm a member of the investment club and follow market trends closely.
+      </p>
+      <p>
+        In high school I captained the varsity lacrosse and soccer teams, winning the CHSAA State
+        Championship in lacrosse, and graduated Summa Cum Laude. I earned the rank of Eagle Scout
+        and took part in leadership programs in the United States and in Ireland.
+      </p>
+      <ul class="chips" aria-label="Interests">
+        <li>Finance</li>
+        <li>Markets</li>
+        <li>Investment Club</li>
+        <li>Team Leadership</li>
       </ul>
     </section>
 
     <!-- Leadership -->
-    <section class="section" aria-labelledby="leadership-heading">
-      <div class="section-head">
-        <h2 id="leadership-heading">Leadership</h2>
-        <button class="toggle-all" type="button" aria-controls="leadership-list">Expand all</button>
-      </div>
+    <section id="leadership" class="section" aria-labelledby="leadership-heading">
+      <h2 id="leadership-heading">Leadership</h2>
 
-      <div id="leadership-list">
-        <article class="entry">
-          <h3 class="entry-title">Varsity Lacrosse Captain</h3>
-          <p class="entry-meta">Archbishop Stepinac High School, White Plains, NY · March 2025 – May 2025</p>
-          <p class="entry-highlight">Won the CHSAA State Championship.</p>
-          <details>
-            <summary>Details</summary>
-            <ul>
-              <li>Directed team operations and strategy, motivating teammates toward athletic and personal excellence.</li>
-              <li>Coordinated team meetings, managed communication between coaches and players, and modeled consistent sportsmanship.</li>
-            </ul>
-          </details>
-        </article>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <p class="timeline-date">Mar 2025 — May 2025</p>
+          <h3>Varsity Lacrosse Captain <span class="at">at Archbishop Stepinac High School</span></h3>
+          <ul class="points">
+            <li>Directed team operations and strategy, motivating teammates toward athletic and personal excellence.</li>
+            <li>Coordinated team meetings, managed communication between coaches and players, and modeled consistent sportsmanship.</li>
+            <li>Won the CHSAA State Championship.</li>
+          </ul>
+        </li>
 
-        <article class="entry">
-          <h3 class="entry-title">Varsity Soccer Captain</h3>
-          <p class="entry-meta">Archbishop Stepinac High School, White Plains, NY · September 2024 – November 2024</p>
-          <details>
-            <summary>Details</summary>
-            <ul>
-              <li>Oversaw conditioning schedules and led team planning sessions.</li>
-              <li>Developed teamwork and conflict-resolution skills through leadership on and off the field.</li>
-            </ul>
-          </details>
-        </article>
+        <li class="timeline-item">
+          <p class="timeline-date">Sep 2024 — Nov 2024</p>
+          <h3>Varsity Soccer Captain <span class="at">at Archbishop Stepinac High School</span></h3>
+          <ul class="points">
+            <li>Oversaw conditioning schedules and led team planning sessions.</li>
+            <li>Developed teamwork and conflict-resolution skills through leadership on and off the field.</li>
+          </ul>
+        </li>
 
-        <article class="entry">
-          <h3 class="entry-title">Boys State Leadership Camp</h3>
-          <p class="entry-meta">August 2024</p>
-          <details>
-            <summary>Details</summary>
-            <ul>
-              <li>Selected among top student leaders for a government simulation program emphasizing civic responsibility and leadership.</li>
-              <li>Held the position of City Councilor.</li>
-            </ul>
-          </details>
-        </article>
+        <li class="timeline-item is-extra">
+          <p class="timeline-date">Aug 2024</p>
+          <h3>City Councilor <span class="at">at Boys State Leadership Camp</span></h3>
+          <ul class="points">
+            <li>Selected among top student leaders for a government simulation program emphasizing civic responsibility and leadership.</li>
+          </ul>
+        </li>
 
-        <article class="entry">
-          <h3 class="entry-title">Foróige Leadership Camp</h3>
-          <p class="entry-meta">Maynooth University, Co. Kildare, Ireland · July 2024</p>
-          <details>
-            <summary>Details</summary>
-            <ul>
-              <li>International leadership development program focused on interpersonal communication, problem-solving, and teamwork.</li>
-            </ul>
-          </details>
-        </article>
-      </div>
+        <li class="timeline-item is-extra">
+          <p class="timeline-date">Jul 2024</p>
+          <h3>Participant <span class="at">at Foróige Leadership Camp</span></h3>
+          <ul class="points">
+            <li>International leadership development program focused on interpersonal communication, problem-solving, and teamwork.</li>
+            <li>Held at Maynooth University in Co. Kildare, Ireland.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <button class="show-more" type="button" aria-expanded="false" aria-controls="leadership">Show more</button>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+
+      <ol class="timeline">
+        <li class="timeline-item">
+          <p class="timeline-date">Expected May 2029</p>
+          <h3>Bachelor of Science, Finance <span class="at">Fairfield University</span></h3>
+          <p class="detail">Fairfield, CT. GPA 3.4.</p>
+          <ul class="chips"><li>Finance</li></ul>
+        </li>
+        <li class="timeline-item">
+          <p class="timeline-date">Jun 2025</p>
+          <h3>High School Diploma <span class="at">Archbishop Stepinac High School</span></h3>
+          <p class="detail">White Plains, NY. Graduated Summa Cum Laude, GPA 3.7.</p>
+        </li>
+      </ol>
     </section>
 
     <!-- Awards -->
-    <section class="section" aria-labelledby="awards-heading">
+    <section id="awards" class="section" aria-labelledby="awards-heading">
       <h2 id="awards-heading">Honors &amp; Awards</h2>
-      <article class="entry">
-        <h3 class="entry-title">Eagle Scout, Boy Scouts of America</h3>
-        <p class="entry-meta">Project Manager, Eagle Scout Project · Summer 2022</p>
-        <details>
-          <summary>Details</summary>
-          <ul>
-            <li>Completed an extensive Eagle Scout project for a local non-profit charity.</li>
-            <li>Researched, proposed, fundraised, and budgeted for materials and supplies.</li>
-          </ul>
-        </details>
+      <article class="card">
+        <p class="card-meta">Boy Scouts of America · Summer 2022</p>
+        <h3>Eagle Scout</h3>
+        <p>Project manager for an Eagle Scout project completed for a local non-profit charity.</p>
+        <ul class="points">
+          <li>Researched, proposed, fundraised, and budgeted for materials and supplies.</li>
+        </ul>
       </article>
     </section>
 
-    <!-- Activities -->
-    <section class="section" aria-labelledby="activities-heading">
-      <h2 id="activities-heading">Activities</h2>
-      <ul class="bullet-list">
-        <li>Investment Club</li>
-        <li>Following market trends</li>
-        <li>Intramural soccer and basketball</li>
-        <li>Gym</li>
-      </ul>
-    </section>
-
-    <!-- Skills -->
-    <section class="section" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      <p>Microsoft Excel · Microsoft Office Suite · Google Workspace</p>
+    <!-- Skills & Activities -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills &amp; Activities</h2>
+      <div class="split">
+        <div>
+          <h3 class="sub">Tools</h3>
+          <ul class="chips">
+            <li>Microsoft Excel</li>
+            <li>Microsoft Office</li>
+            <li>Google Workspace</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub">Activities</h3>
+          <ul class="chips">
+            <li>Investment Club</li>
+            <li>Following market trends</li>
+            <li>Intramural soccer</li>
+            <li>Intramural basketball</li>
+            <li>Gym</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
-    <section class="section" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <p>Fairfield University, Fairfield, CT</p>
-      <p>Email: <a href="mailto:liam.smith@student.fairfield.edu">liam.smith@student.fairfield.edu</a></p>
+    <section id="contact" class="section contact" aria-labelledby="contact-heading">
+      <p class="kicker">./contact</p>
+      <h2 id="contact-heading">Get in touch.</h2>
+      <p>The best way to reach me is by email.</p>
+      <a class="contact-email" href="mailto:liam.smith@student.fairfield.edu">liam.smith@student.fairfield.edu</a>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year">2026</span> Liam P. Smith</p>
+    <p>© <span id="year">2026</span> Liam P. Smith</p>
+    <a href="#top">Back to top ↑</a>
   </footer>
 
   <script src="script.js"></script>
